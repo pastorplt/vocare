@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocare Collective — Coming Soon</title>
+  <meta name="description" content="Vocare Collective — a community for discovering and living out your calling. Coming soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #faf6ef;
+      color: #1f1b16;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      background-image: radial-gradient(ellipse at 50% -20%, #fdfaf4 0%, #faf6ef 55%, #f3ecdf 100%);
+    }
+    .mark {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: #b08d3f;
+      margin-bottom: 2.5rem;
+      animation: rise 1s ease both;
+    }
+    .mark::before, .mark::after {
+      content: "";
+      display: inline-block;
+      width: 2.5rem;
+      height: 1px;
+      background: #c9ad6e;
+      vertical-align: middle;
+      margin: 0 1rem 0.2rem;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      animation: rise 1s 0.15s ease both;
+    }
+    .meaning {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      color: #5a5248;
+      margin-top: 1.4rem;
+      animation: rise 1s 0.3s ease both;
+    }
+    .divider {
+      width: 3.5rem;
+      height: 1px;
+      background: #b08d3f;
+      margin: 2.5rem auto;
+      animation: rise 1s 0.45s ease both;
+    }
+    .tagline {
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+      line-height: 1.7;
+      color: #5a5248;
+      max-width: 34rem;
+      animation: rise 1s 0.55s ease both;
+    }
+    .soon {
+      margin-top: 3rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #1f1b16;
+      animation: rise 1s 0.7s ease both;
+    }
+    .contact {
+      margin-top: 2.75rem;
+      font-size: 0.9rem;
+      color: #5a5248;
+      animation: rise 1s 0.85s ease both;
+    }
+    .contact a {
+      color: #b08d3f;
+      text-decoration: none;
+      border-bottom: 1px solid #c9ad6e;
+      padding-bottom: 1px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .contact a:hover { color: #1f1b16; border-color: #1f1b16; }
+    footer {
+      margin-top: 4rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #a89d8d;
+      animation: rise 1s 1s ease both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .mark, h1, .meaning, .divider, .tagline, .soon, .contact, footer { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mark">Vocare Collective</div>
+  <h1>Called&nbsp;to Something&nbsp;More</h1>
+  <p class="meaning">vocare&nbsp;&middot;&nbsp;Latin&nbsp;&middot;&nbsp;“to call”</p>
+  <div class="divider"></div>
+  <p class="tagline">
+    A community for discovering your calling and living it out with purpose —
+    where faith, work, and vocation meet. We're preparing something meaningful.
+  </p>
+  <p class="soon">Coming Soon</p>
+  <p class="contact">
+    Want to hear when we launch? Reach out at
+    <a href="mailto:paul@tbc.city">paul@tbc.city</a>
+  </p>
+  <footer>&copy; 2026 Vocare Collective</footer>
+</body>
+</html>
