@@ -1,131 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vocare Collective — Coming Soon</title>
-  <meta name="description" content="Vocare Collective — a community for discovering and living out your calling. Coming soon." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #faf6ef;
-      color: #1f1b16;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      background-image: radial-gradient(ellipse at 50% -20%, #fdfaf4 0%, #faf6ef 55%, #f3ecdf 100%);
-    }
-    .mark {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.45em;
-      text-transform: uppercase;
-      color: #b08d3f;
-      margin-bottom: 2.5rem;
-      animation: rise 1s ease both;
-    }
-    .mark::before, .mark::after {
-      content: "";
-      display: inline-block;
-      width: 2.5rem;
-      height: 1px;
-      background: #c9ad6e;
-      vertical-align: middle;
-      margin: 0 1rem 0.2rem;
-    }
-    h1 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(2.8rem, 8vw, 5.5rem);
-      line-height: 1.05;
-      letter-spacing: 0.02em;
-      animation: rise 1s 0.15s ease both;
-    }
-    .meaning {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-style: italic;
-      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
-      color: #5a5248;
-      margin-top: 1.4rem;
-      animation: rise 1s 0.3s ease both;
-    }
-    .divider {
-      width: 3.5rem;
-      height: 1px;
-      background: #b08d3f;
-      margin: 2.5rem auto;
-      animation: rise 1s 0.45s ease both;
-    }
-    .tagline {
-      font-weight: 300;
-      font-size: clamp(0.95rem, 2.2vw, 1.1rem);
-      line-height: 1.7;
-      color: #5a5248;
-      max-width: 34rem;
-      animation: rise 1s 0.55s ease both;
-    }
-    .soon {
-      margin-top: 3rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: #1f1b16;
-      animation: rise 1s 0.7s ease both;
-    }
-    .contact {
-      margin-top: 2.75rem;
-      font-size: 0.9rem;
-      color: #5a5248;
-      animation: rise 1s 0.85s ease both;
-    }
-    .contact a {
-      color: #b08d3f;
-      text-decoration: none;
-      border-bottom: 1px solid #c9ad6e;
-      padding-bottom: 1px;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-    .contact a:hover { color: #1f1b16; border-color: #1f1b16; }
-    footer {
-      margin-top: 4rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      color: #a89d8d;
-      animation: rise 1s 1s ease both;
-    }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .mark, h1, .meaning, .divider, .tagline, .soon, .contact, footer { animation: none; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vocare Collective</title>
+<meta name="description" content="Vocare Collective — a community for early-career tech professionals in San Francisco living out their faith at work." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    background: #faf9f5;
+    color: #1c2b3f;
+    line-height: 1.65;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+  header.site {
+    padding: 3.5rem 0 2rem;
+    text-align: center;
+  }
+  .logo-mark {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    color: #1c2b3f;
+  }
+  .logo-mark span { color: #3b5578; }
+  .logo-img { height: 64px; width: auto; }
+
+  section { padding: 3rem 0; border-top: 1px solid #e7e2d6; }
+  header.site + section { border-top: none; }
+
+  .hero { text-align: center; padding-top: 1rem; }
+  .hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.25rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: #3f4a58;
+    max-width: 42rem;
+    margin: 0 auto 1rem;
+  }
+  .hero .etym {
+    font-size: 1rem;
+    color: #5a6270;
+    max-width: 40rem;
+    margin: 1.5rem auto 0;
+  }
+  .etym em { font-style: italic; color: #3b5578; }
+
+  h2.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
+    text-align: center;
+  }
+
+  .cs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .cs-card {
+    background: #fff;
+    border: 1px solid #e7e2d6;
+    border-left: 4px solid var(--accent, #3b5578);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+  .cs-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: lowercase;
+    margin-bottom: 0.5rem;
+    color: var(--accent, #3b5578);
+  }
+  .cs-card p { font-size: 0.95rem; color: #4a5260; }
+  .cs-card.slate { --accent: #4f6c8f; }
+  .cs-card.green { --accent: #4f8068; }
+  .cs-card.purple { --accent: #6f5f8f; }
+  .cs-card.navy { --accent: #1c2b3f; }
+
+  .mission-note {
+    font-size: 1rem;
+    color: #3f4a58;
+    max-width: 44rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .event {
+    background: #fff;
+    border: 1px solid #e7e2d6;
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .event:last-child { margin-bottom: 0; }
+  .event h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .event p.desc { font-size: 0.95rem; color: #4a5260; margin-bottom: 0.75rem; }
+  .event .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .event .meta span {
+    background: #f1ede1;
+    color: #6b5a2e;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+  }
+  .event .meta a.chip {
+    background: #f1ede1;
+    color: #6b5a2e;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .event .meta a.chip:hover {
+    background: #e6dfc9;
+    border-color: #c9b98a;
+  }
+
+  .section-divider {
+    width: 2px;
+    height: 2.5rem;
+    background: #c9ad6e;
+    margin: 0 auto 1.5rem;
+  }
+  section.spaced { padding-top: 5rem; }
+
+  .launch-intro { text-align: center; max-width: 42rem; margin: 0 auto 2rem; color: #3f4a58; }
+  .launch-intro strong { color: #1c2b3f; }
+
+  .pillars { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  .pillar {
+    background: #fff;
+    border: 1px solid #e7e2d6;
+    border-left: 4px solid var(--accent, #3b5578);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+  .pillar h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: lowercase;
+    color: var(--accent, #3b5578);
+    margin-bottom: 0.4rem;
+  }
+  .pillar p { font-size: 0.93rem; color: #4a5260; }
+  .pillar.navy { --accent: #3b5578; }
+  .pillar.purple { --accent: #6f5f8f; }
+  .pillar.green { --accent: #4f8068; }
+
+  footer.site {
+    text-align: center;
+    padding: 3rem 0 3.5rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+  }
+  footer.site a {
+    color: #3b5578;
+    text-decoration: none;
+    border-bottom: 1px solid #a9b8cc;
+  }
+
+  @media (max-width: 600px) {
+    .cs-grid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-  <div class="mark">Vocare Collective</div>
-  <h1>Called&nbsp;to Something&nbsp;More</h1>
-  <p class="meaning">vocare&nbsp;&middot;&nbsp;Latin&nbsp;&middot;&nbsp;“to call”</p>
-  <div class="divider"></div>
-  <p class="tagline">
-    A community for discovering your calling and living it out with purpose —
-    where faith, work, and vocation meet. We're preparing something meaningful.
-  </p>
-  <p class="soon">Coming Soon</p>
-  <p class="contact">
-    Want to hear when we launch? Reach out at
-    <a href="mailto:kate@faithworktech.org">kate@faithworktech.org</a>
-  </p>
-  <footer>&copy; 2026 Vocare Collective</footer>
+
+<header class="site">
+  <img class="logo-img" src="vocarecollectivelogo.png" alt="Vocare Collective" onerror="this.outerHTML='&lt;div class=&quot;logo-mark&quot;&gt;VOCARE &lt;span&gt;COLLECTIVE&lt;/span&gt;&lt;/div&gt;'" />
+</header>
+
+<section class="hero wrap">
+  <h1>Called to something more</h1>
+  <p>Vocare Collective is a community for early-career tech professionals in San Francisco. We seek to use our Christian faith to shape our work, and the products, cultures, and companies changing our world.</p>
+  <p class="etym"><em>Vocare</em> comes from the Latin word meaning &ldquo;to call&rdquo; &mdash; it&rsquo;s the root of our English word <em>vocation</em>, not just a job, but a calling, and purpose. Connected to the Hebrew <em>avodah</em>, which not only means work, but worship. If you join us, what will you be called to?</p>
+</section>
+
+<section class="wrap">
+  <h2 class="section-title">Collective members engage across 4 Cs</h2>
+  <div class="cs-grid">
+    <div class="cs-card slate">
+      <h3>connection</h3>
+      <p>Building a network for opportunities &mdash; housing, jobs, funding, and more.</p>
+    </div>
+    <div class="cs-card green">
+      <h3>community</h3>
+      <p>Close, supportive relationships, mentorship, wise and faithful counsel.</p>
+    </div>
+    <div class="cs-card purple">
+      <h3>content</h3>
+      <p>Exposure to great theology, thought-leaders, resources, and tools.</p>
+    </div>
+    <div class="cs-card navy">
+      <h3>contemplation and commitment</h3>
+      <p>Reflect, set new practices, and take action.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="mission-note">We&rsquo;re building toward intimate 25-member cohorts that we believe will be a foundational community for building your career, and living out your purpose. We pair this deep community with great theology, tools, and practices that bring your faith to life in your daily work. We know those who root their work, the products and companies they build, and the cultures they nurture in their Christian faith will flourish personally. And we believe at scale, a network of faith-driven leaders have the potential to accelerate redemption and revival in our world.</p>
+</section>
+
+<section class="wrap spaced">
+  <div class="section-divider"></div>
+  <h2 class="section-title">2026 events + offerings</h2>
+  <p style="text-align:center; color:#4a5260; margin-bottom:2rem;">Join us this year for a preview of the cohort and community experience.</p>
+
+  <div class="event">
+    <h3>Leveraging the 4AI Framework to Explore the Intersection of Humanity and Technology</h3>
+    <p class="desc">Experience our rich content, commit to take action, and build new connections across a group of like-minded peers.</p>
+    <div class="meta">
+      <a class="chip" href="https://luma.com/lgjcpbpl" target="_blank" rel="noopener">July 20 &middot; Palo Alto &mdash; Register</a>
+      <a class="chip" href="https://luma.com/dgnzc87g" target="_blank" rel="noopener">August 24 &middot; San Francisco &mdash; Register</a>
+    </div>
+  </div>
+
+  <div class="event">
+    <h3>Faithful Leadership &mdash; Dinner and Fireside Chat with Top Tech Founders</h3>
+    <p class="desc">Learn from faith-driven founders who have nurtured their faith, applied it to strengthen their business, and rooted themselves in God&rsquo;s call and Word over the noise of Silicon Valley. Discuss what you&rsquo;ve learned over a meal alongside fellow early career Christians in tech.</p>
+    <div class="meta"><span>September 9 &middot; San Francisco</span><span>$35, incl. dinner</span><span>Registration coming soon</span></div>
+  </div>
+
+  <div class="event">
+    <h3>Spiritual Formation Day Retreat</h3>
+    <p class="desc">Spend a day with the pastors, spiritual directors, marketplace leaders, and mentors of Faith, Work and Tech. We&rsquo;ll teach the basics of our theology of faith and work with toolkits to apply them and lots of conversation to integrate them into your own walk. We&rsquo;ll guide a powerful spiritual practice to refresh your faith, enjoy a lunchtime fireside chat, and wrap with a delicious dinner. Everyone receives coaching to help you get unstuck in your current walk and challenges.</p>
+    <div class="meta"><span>October 3 &middot; San Francisco</span><span>$75, incl. resources and 3 meals</span><span>Registration coming soon</span></div>
+  </div>
+
+  <div class="event">
+    <h3>SF Tech Week with Christians*in Tech and other local Faith + Work Partners</h3>
+    <p class="desc">Your faith belongs at work, and at Tech Week. Join us for an informal large-scale networking event seeking to turn out as many early-career Christians in Tech in SF as possible over breakfast the Monday of Tech Week. Faith, Work and Tech and Vocare Collective are partnering with Christians*in Tech and several other local faith + work organizations to host this mixer &mdash; a chance to see the scale and breadth of folks following Jesus and working for the Kingdom in tech, and to find your community among the organizations supporting your walk of faith and work in the Bay Area.</p>
+    <div class="meta"><span>October 5 &middot; San Francisco</span><span>9:00&ndash;10:30am</span><span>Location and registration coming soon</span></div>
+  </div>
+</section>
+
+<section class="wrap spaced">
+  <div class="section-divider"></div>
+  <h2 class="section-title">2027: Vocare Collective Public Launch</h2>
+  <p class="launch-intro">The application for our founding vocare launch cohort opens <strong>October 15, 2026</strong>.</p>
+
+  <div class="pillars">
+    <div class="pillar navy">
+      <h3>vocare forum</h3>
+      <p>Quarterly public events for connection, and to introduce thought-leadership, strong theology of faith and work, and new connections to other Christians building their careers in tech.</p>
+    </div>
+    <div class="pillar purple">
+      <h3>vocare revive and vocare catalyze</h3>
+      <p>Twice-annual overnight retreats to deepen spiritual formation (revive), and help you take your next step as a redemptive worker for the Kingdom (catalyze). Spring 2027 retreats will be limited to vocare launch participants; future retreats will have limited spaces open to the public.</p>
+    </div>
+    <div class="pillar green">
+      <h3>vocare launch</h3>
+      <p>Our flagship 5-month cohort. We&rsquo;ll invite 25 high-slope professionals in tech to our biweekly IRL program in San Francisco. You&rsquo;ll receive great teaching, practical tools and resources, top-flight mentors to accelerate your career and your walk with God, spiritual direction, and a community of two dozen others to walk and lead alongside over the next two decades. Each cohort will also have &ldquo;circles&rdquo; &mdash; smaller groups of 5 for mutual support and encouragement along the journey.</p>
+    </div>
+    <div class="pillar navy">
+      <h3>vocare connect</h3>
+      <p>An exclusive Slack group for our launch participants and alumni &mdash; your first stop for community, connection, guidance, and support. Private channels for your cohort and your circle, dedicated channels for your craft, leveraging technology with humanity, and spiritual direction led by expert guides. A digital home that is confidential, secure, and supportive, that helps you reconnect in person.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site wrap">
+  <p>Want to connect with a member of our team and hear about new events and initiatives? <a href="https://faithworktech.myflodesk.com/vocarecollective" target="_blank" rel="noopener">Sign up here</a>.</p>
+  <p style="margin-top:1rem; font-size:0.82rem; color:#8a8f98;">Vocare Collective is an initiative from the Bay Area Center for Faith, Work, and Tech. Visit <a href="https://faithworktech.org" target="_blank" rel="noopener" style="color:#8a8f98; border-bottom-color:#c7cbd1;">faithworktech.org</a> to learn more.</p>
+  <p style="margin-top:1rem;">&copy; 2026 Vocare Collective</p>
+</footer>
+
 </body>
 </html>
