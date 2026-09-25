@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vocare Launch — Cohort 1 | Vocare Collective</title>
+<meta name="description" content="Vocare Launch is a 5-month cohort for early-career tech professionals in the San Francisco Bay Area living out their Christian faith at work. Applications for Cohort 1 (Spring 2027) are open." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    background: #F2F4F7;
+    color: #1c2b3f;
+    line-height: 1.65;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+  header.site { padding: 3.5rem 0 2rem; text-align: center; }
+  .logo-mark { font-weight: 800; font-size: 1.4rem; letter-spacing: 0.08em; color: #1c2b3f; }
+  .logo-mark span { color: #3b5578; }
+  .logo-img { height: 90px; width: auto; }
+  .back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #6b7280;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .back-link:hover { color: #3b5578; border-bottom-color: #a9b8cc; }
+
+  section { padding: 3rem 0; border-top: 1px solid #e7e2d6; }
+  header.site + section { border-top: none; }
+  section.spaced { padding-top: 5rem; }
+  section.no-border { border-top: none; }
+
+  /* Hero */
+  .hero { text-align: center; padding-top: 0.5rem; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6b5a2e;
+    background: #f1ede1;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 em { font-style: italic; color: #3b5578; }
+  .hero p.lede {
+    font-size: 1.15rem;
+    color: #3f4a58;
+    max-width: 42rem;
+    margin: 0 auto 2rem;
+  }
+  .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+  .btn {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary { background: #1c2b3f; color: #fff; }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(28,43,63,0.25); }
+  .btn-secondary { background: #fff; color: #1c2b3f; border: 1px solid #d7dbe1; }
+  .btn-secondary:hover { border-color: #3b5578; color: #3b5578; }
+  .hero-note { font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; }
+
+  h2.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  p.section-sub {
+    text-align: center;
+    color: #4a5260;
+    max-width: 42rem;
+    margin: 0 auto 2rem;
+    font-size: 0.98rem;
+  }
+  .section-divider { width: 2px; height: 2.5rem; background: #c9ad6e; margin: 0 auto 1.5rem; }
+
+  /* 4C-style grid, reused for "what you get" */
+  .cs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .cs-card {
+    background: #fff; border: 1px solid #e7e2d6; border-left: 4px solid var(--accent, #3b5578);
+    border-radius: 10px; padding: 1.5rem;
+  }
+  .cs-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--accent, #3b5578); }
+  .cs-card p { font-size: 0.95rem; color: #4a5260; }
+  .cs-card.slate { --accent: #4f6c8f; }
+  .cs-card.green { --accent: #4f8068; }
+  .cs-card.purple { --accent: #6f5f8f; }
+  .cs-card.navy { --accent: #1c2b3f; }
+  .cs-card.gold { --accent: #b08d3f; }
+
+  /* Pillar-style cards, reused for the 4 modules + retreats */
+  .pillars { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  .pillar {
+    background: #fff; border: 1px solid #e7e2d6; border-left: 4px solid var(--accent, #3b5578);
+    border-radius: 8px; padding: 1.25rem 1.5rem;
+  }
+  .pillar h3 { font-size: 1.05rem; font-weight: 700; color: var(--accent, #3b5578); margin-bottom: 0.4rem; display:flex; align-items:center; gap:0.6rem; }
+  .pillar .num {
+    display:inline-flex; align-items:center; justify-content:center;
+    width: 1.6rem; height:1.6rem; border-radius:50%;
+    background: var(--accent, #3b5578); color:#fff; font-size:0.78rem; font-weight:800; flex-shrink:0;
+  }
+  .pillar p { font-size: 0.93rem; color: #4a5260; }
+  .pillar.navy { --accent: #3b5578; }
+  .pillar.purple { --accent: #6f5f8f; }
+  .pillar.green { --accent: #4f8068; }
+  .pillar.gold { --accent: #b08d3f; }
+
+  /* Timeline for schedule */
+  .timeline { position: relative; padding-left: 1.75rem; }
+  .timeline::before {
+    content: ""; position: absolute; left: 0.4rem; top: 0.3rem; bottom: 0.3rem; width: 2px; background: #e7e2d6;
+  }
+  .t-item { position: relative; margin-bottom: 1.4rem; }
+  .t-item:last-child { margin-bottom: 0; }
+  .t-item::before {
+    content: ""; position: absolute; left: -1.75rem; top: 0.25rem; width: 0.85rem; height: 0.85rem;
+    border-radius: 50%; background: #b08d3f; border: 2px solid #fff; box-shadow: 0 0 0 2px #e7e2d6;
+  }
+  .t-item.milestone::before { background: #1c2b3f; width: 1rem; height: 1rem; left: -1.83rem; }
+  .t-date { font-weight: 700; font-size: 0.92rem; color: #1c2b3f; }
+  .t-desc { font-size: 0.9rem; color: #4a5260; }
+
+  /* Eligibility list */
+  .check-list { list-style: none; }
+  .check-list li {
+    display: flex; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid #e7e2d6; font-size: 0.95rem; color: #2d394a;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list .mark2 { color: #4f8068; font-weight: 800; flex-shrink: 0; }
+
+  .callout {
+    background: #fff; border: 1px solid #e7e2d6; border-radius: 10px; padding: 1.5rem 1.75rem; margin-top: 1.5rem;
+  }
+  .callout.gold { border-left: 4px solid #b08d3f; }
+  .callout h4 { font-size: 0.98rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .callout p { font-size: 0.9rem; color: #4a5260; }
+
+  /* Application key facts */
+  .facts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-bottom: 1.5rem; }
+  .fact-card {
+    background: #fff; border: 1px solid #e7e2d6; border-radius: 10px; padding: 1.4rem 1.5rem;
+  }
+  .fact-card .tag {
+    display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color:#6b5a2e; background:#f1ede1; padding:0.2rem 0.6rem; border-radius:999px; margin-bottom:0.6rem;
+  }
+  .fact-card h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.35rem; }
+  .fact-card p { font-size: 0.88rem; color: #4a5260; }
+
+  /* FAQ */
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  details.faq-item {
+    background: #fff; border: 1px solid #e7e2d6; border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden;
+  }
+  details.faq-item summary {
+    cursor: pointer; list-style: none; padding: 1.1rem 1.5rem; font-weight: 700; font-size: 0.98rem;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item summary::after {
+    content: "+"; font-size: 1.3rem; font-weight: 400; color: #b08d3f; flex-shrink: 0; transition: transform 0.2s ease;
+  }
+  details.faq-item[open] summary::after { content: "\2212"; }
+  details.faq-item .faq-body { padding: 0 1.5rem 1.3rem; font-size: 0.92rem; color: #4a5260; }
+  details.faq-item .faq-body p { margin-bottom: 0.75rem; }
+  details.faq-item .faq-body p:last-child { margin-bottom: 0; }
+  details.faq-item .faq-body ul { padding-left: 1.2rem; margin-bottom: 0.75rem; }
+  details.faq-item .faq-body li { margin-bottom: 0.35rem; }
+  .faq-category {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #9aa1ac; margin: 2rem 0 0.75rem; text-align: center;
+  }
+  .faq-category:first-child { margin-top: 0; }
+
+  footer.site { text-align: center; padding: 3rem 0 3.5rem; font-size: 0.85rem; color: #6b7280; }
+  footer.site a { color: #3b5578; text-decoration: none; border-bottom: 1px solid #a9b8cc; }
+
+  @media (max-width: 600px) {
+    .cs-grid { grid-template-columns: 1fr; }
+    .facts-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <img class="logo-img" src="../vocare-logo-final.png" alt="Vocare Collective" onerror="this.outerHTML='&lt;div class=&quot;logo-mark&quot;&gt;VOCARE &lt;span&gt;COLLECTIVE&lt;/span&gt;&lt;/div&gt;'" />
+  <br />
+  <a class="back-link" href="/">&larr; Back to Vocare Collective</a>
+</header>
+
+<!-- HERO -->
+<section class="hero wrap">
+  <span class="eyebrow">Applications Open &middot; Cohort 1, Spring 2027</span>
+  <h1>You weren&rsquo;t made to build alone.<br /><em>Vocare Launch</em> is your cohort.</h1>
+  <p class="lede">A 5-month flagship program for 25 early-career tech professionals in the San Francisco Bay Area &mdash; deep community, great teaching, and mentors to help you build your career and your walk with God, together.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#apply">Apply Now</a>
+    <a class="btn btn-secondary" href="#program">See How It Works</a>
+  </div>
+  <p class="hero-note">Early admission window: September 25 &ndash; October 14, 2026</p>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="wrap spaced no-border" id="program">
+  <div class="section-divider"></div>
+  <h2 class="section-title">What you get</h2>
+  <p class="section-sub">Vocare Launch pairs deep, in-person community with great theology, tools, and practices that bring your faith to life in your daily work.</p>
+  <div class="cs-grid">
+    <div class="cs-card slate">
+      <h3>biweekly gatherings</h3>
+      <p>In-person meetups in San Francisco every other week for 5 months &mdash; teaching, discussion, and coaching.</p>
+    </div>
+    <div class="cs-card green">
+      <h3>a pod of 5</h3>
+      <p>A small, facilitated group for accountability, coaching, and mutual encouragement throughout the cohort.</p>
+    </div>
+    <div class="cs-card purple">
+      <h3>top-flight mentors</h3>
+      <p>Local pastors and tech leaders in conversation on real questions of faith, work, and calling.</p>
+    </div>
+    <div class="cs-card navy">
+      <h3>a lifelong community</h3>
+      <p>Two dozen peers to walk and lead alongside &mdash; and an alumni network you'll stay connected to for decades.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="wrap spaced no-border">
+  <div class="section-divider"></div>
+  <h2 class="section-title">Cohort Experience</h2>
+  <p class="section-sub">Our program leverages 2 overnight retreats to launch and conclude the cohort, alongside teaching and coaching on our proprietary system for integrating faith and work, 4AI.</p>
+  <div class="pillars">
+    <div class="pillar gold">
+      <h3><span class="num">R</span>vocare revive</h3>
+      <p>An opening overnight retreat in Sausalito to kick off the cohort and deepen your spiritual formation together.</p>
+    </div>
+    <div class="pillar navy">
+      <h3><span class="num">1</span>awe</h3>
+      <p>Teaching and Coaching on Awe &mdash; the joyful surrendering to restorative smallness when confronted by an uncontrollable reality.</p>
+    </div>
+    <div class="pillar navy">
+      <h3><span class="num">2</span>identity</h3>
+      <p>Teaching and Coaching on Identity is the gradual knowing of the self that we receive as given and shape through our attention.</p>
+    </div>
+    <div class="pillar navy">
+      <h3><span class="num">3</span>intimacy</h3>
+      <p>Teaching and Coaching on Intimacy &mdash; the seeking and being sought by one another in a dynamic exchange of vulnerability within protective boundaries.</p>
+    </div>
+    <div class="pillar navy">
+      <h3><span class="num">4</span>agency</h3>
+      <p>Teaching and Coaching on Agency &mdash; the responsible exercising of genuine but limited authority which alters the world around us.</p>
+    </div>
+    <div class="pillar gold">
+      <h3><span class="num">C</span>vocare catalyze</h3>
+      <p>A closing overnight retreat to send you off with clarity on your next step &mdash; and a community for the journey ahead.</p>
+    </div>
+  </div>
+  <div class="callout gold">
+    <h4>Where we meet</h4>
+    <p>Gatherings are held near Downtown San Francisco at Experience Church in the Mission &mdash; a short walk from 16th St Mission BART/MUNI. Both retreats are at Casa Madrona in Sausalito, just a 30-minute drive or ferry ride from the city. Full logistics are in the FAQ below.</p>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="wrap spaced no-border">
+  <div class="section-divider"></div>
+  <h2 class="section-title">Spring 2027 Cohort Dates</h2>
+  <p class="section-sub">Retreats take place from 6pm Thursday through 6pm Friday at Casa Madrona in Sausalito, Marin; Cohort Meetups take place biweekly on Mondays from 6pm &ndash; 9pm at Experience Church in the Mission in San Francisco.</p>
+  <div class="timeline">
+    <div class="t-item milestone">
+      <div class="t-date">Jan 7&ndash;8, 2027 &middot; Vocare Revive Retreat</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Jan 25 &middot; Awe &ndash; Teaching and Discussion</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Feb 8 &middot; Awe &ndash; Pod Coaching and Discussion</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Feb 22 &middot; Identity &ndash; Teaching and Discussion</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Mar 8 &middot; Identity &ndash; Pod Coaching and Discussion</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Mar 22 &middot; Intimacy &ndash; Teaching and Discussion</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Apr 12 &middot; Intimacy &ndash; Pod Coaching and Discussion</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">Apr 26 &middot; Agency &ndash; Teaching and Discussion</div>
+    </div>
+    <div class="t-item">
+      <div class="t-date">May 10 &middot; Agency &ndash; Pod Coaching and Discussion</div>
+    </div>
+    <div class="t-item milestone">
+      <div class="t-date">May 20&ndash;21, 2027 &middot; Vocare Catalyze Retreat</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO SHOULD APPLY -->
+<section class="wrap spaced no-border">
+  <div class="section-divider"></div>
+  <h2 class="section-title">Who Should Apply</h2>
+  <ul class="check-list">
+    <li><span class="mark2">&#10003;</span> You identify as a Christian and can affirm a traditional statement of faith, like the Apostles&rsquo; or Nicene Creed.</li>
+    <li><span class="mark2">&#10003;</span> You&rsquo;re in the first decade of your career.</li>
+    <li><span class="mark2">&#10003;</span> You work in tech or directly adjacent &mdash; at a startup, large tech company, in hardware or biotech, or directly supporting tech such as startup law, venture capital, or private equity.</li>
+    <li><span class="mark2">&#10003;</span> You&rsquo;re based in the SF Bay Area and plan to stay and build here for the foreseeable future.</li>
+    <li><span class="mark2">&#10003;</span> You can commit fully to every retreat and meetup on the Spring 2027 schedule above.</li>
+  </ul>
+</section>
+
+<!-- APPLY -->
+<section class="wrap spaced no-border" id="apply">
+  <div class="section-divider"></div>
+  <h2 class="section-title">How to Apply</h2>
+  <p class="section-sub">Applications cannot be saved and resumed &mdash; we recommend drafting your answers in a doc first, then copying them in. (See the FAQ for the full list of application questions.)</p>
+  <div class="facts-grid">
+    <div class="fact-card">
+      <span class="tag">Early Admission</span>
+      <h4>Sept 25 &ndash; Oct 14, 2026</h4>
+      <p>Rolling admissions for a limited number of cohort seats, for those who have already participated in Vocare events during our summer and fall pilots. Decisions by October 16, Accept your spot or defer to Fall 2027 by October 30.</p>
+    </div>
+    <div class="fact-card">
+      <span class="tag">Standard Admission</span>
+      <h4>Oct 15 &ndash; Nov 13, 2026</h4>
+      <p>Regular, open admissions. Acceptance and Waitlist announced November 23; Accept or Defer to Fall 2027 by December 5.</p>
+    </div>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd5wFNKmiCjj7rbcPQxxOZdwomo-3JlSWC985nKAiVmlwfCDQ/viewform?usp=sharing&ouid=104847300522806666192" target="_blank" rel="noopener">Start Your Application</a>
+  </div>
+  <p class="hero-note" style="text-align:center;">There is a $250 program fee if you&rsquo;re admitted and accept your spot.</p>
+</section>
+
+<!-- FAQ -->
+<section class="wrap spaced no-border">
+  <div class="section-divider"></div>
+  <h2 class="section-title">Frequently asked questions</h2>
+  <p class="section-sub">The details &mdash; for when you're ready to go deeper.</p>
+
+  <div class="faq-list">
+
+    <p class="faq-category">The application</p>
+
+    <details class="faq-item">
+      <summary>What does the application ask for?</summary>
+      <div class="faq-body">
+        <p>Beyond your basic contact info (name, email, phone, mailing address for swag + materials, geographic region, and a LinkedIn profile or resume), you'll be asked to submit:</p>
+        <ul>
+          <li>A personal statement of faith &mdash; meaningful, but under one page. Cover your beliefs, how they shape your life and work today, and how you engage in Christian community now.</li>
+          <li>A statement of interest in Vocare Launch &mdash; why you want to join, what impact you're hoping for, and how you'll stay engaged with your cohort and Vocare afterward.</li>
+          <li>A reference&rsquo;s name and email. You&rsquo;re responsible for sending them the reference form and following up if it&rsquo;s not submitted by the deadline.</li>
+          <li>Affirmations that you can attend every retreat and meetup listed on the cohort schedule, that you understand the $250 program fee, and that you've read all the expectations on this page.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What happens if I'm not admitted for Spring 2027?</summary>
+      <div class="faq-body">
+        <p>Standard applicants not admitted to Spring 2027 may be placed on our waitlist. We anticipate extending waitlist invitations on or before December 7, with a decision requested by December 15; the cohort will be finalized no later than December 18 to prepare for the January retreat.</p>
+        <p>If you'd rather skip the wait, you can pay a non-refundable deposit to secure a spot in our Fall 2027 cohort (August&ndash;December 2027) instead. We'll follow up in early June 2027 to confirm your participation before general applications open.</p>
+      </div>
+    </details>
+
+    <p class="faq-category">Program logistics</p>
+
+    <details class="faq-item">
+      <summary>What does a typical meetup night look like?</summary>
+      <div class="faq-body">
+        <p><strong>Teaching + discussion weeks:</strong></p>
+        <ul>
+          <li>6:00&ndash;7:00 &mdash; connect and eat</li>
+          <li>7:00 &mdash; 45 minutes of teaching with Paul Taylor, FWT Co-Founder and our Vocare Program Director</li>
+          <li>7:45 &mdash; break and discussion</li>
+          <li>8:15 &mdash; a local pastor (including FWT partner pastors Ben Pilgreen, Dave Lomas, Dani Kilgore, and more) and a tech leader from their church, in conversation on the week's theme</li>
+          <li>9:00 &mdash; wrap up in the Mission, with plenty of restaurants nearby to keep the conversation going</li>
+        </ul>
+        <p><strong>Coaching + praxis weeks:</strong></p>
+        <ul>
+          <li>6:00&ndash;7:00 &mdash; connect and eat</li>
+          <li>7:00&ndash;8:30 &mdash; "hot seat" coaching: bring a real challenge and get 15 minutes of coaching from your facilitator and pod</li>
+          <li>8:30&ndash;9:00 &mdash; large-group share-back of key takeaways, prayer requests, or asks for connection and support</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Where exactly do we meet, and is there parking?</summary>
+      <div class="faq-body">
+        <p>Biweekly gatherings are near Downtown San Francisco at Experience Church in the Mission neighborhood &mdash; a short walk from 16th Street Mission MUNI/BART, and easy to reach by rideshare or autonomous vehicle. There's no onsite parking, and parking in the neighborhood is genuinely tough, so if you're driving, we recommend reserving a guaranteed spot in advance through SpotHero or a similar service.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What happens at the retreats?</summary>
+      <div class="faq-body">
+        <p>Both Vocare Revive and Vocare Catalyze follow the same shape: arrive by 6:00pm Thursday for a welcome reception and 7:00pm dinner (with optional hangout time after). Friday starts early at 8:30am with a team-building activity, a morning session, open time and lunch, and two afternoon sessions before a closing session &mdash; wrapping by 6:00pm so you're back for your weekend.</p>
+        <p>We host both retreats at Casa Madrona in Sausalito, about a 30-minute drive or ferry ride from San Francisco. It's close enough to join even after a full day of work Thursday, but far enough to feel like a genuine retreat &mdash; with beautiful views, curated group activities, and space to walk and reconnect with nature and each other. Madrona is two blocks from the Sausalito Ferry Terminal and a short drive over the Golden Gate Bridge from SF's westside neighborhoods.</p>
+      </div>
+    </details>
+
+    <p class="faq-category">Commitment &amp; expectations</p>
+
+    <details class="faq-item">
+      <summary>How serious is the commitment, really?</summary>
+      <div class="faq-body">
+        <p>Very. We believe the two dozen people you go through this cohort with can become some of your closest friends, confidants, and advocates for decades &mdash; but that kind of relationship doesn't form without real consistency over the 5-month season. As part of your application, you'll attest that you can hold a firm do-not-schedule block on Monday evenings during cohort weeks, and that your PTO for both retreats is not movable.</p>
+        <p>We know tech is intense and things come up. If an emergency means you'd miss the opening Catalyze retreat, we'll ask you to defer to a future cohort &mdash; deferral is taken seriously, since it shrinks the cohort and affects the program's sustainability, so we ask everyone to fully commit at enrollment. If you miss a single meetup during the program, just loop in your pod facilitator and cohort, and make an extra effort to stay connected so you're not out of touch for a full month.</p>
+        <p>Between sessions, we expect you to be active in our Slack community at least a couple of times a week, and we strongly encourage connecting with your pod outside of formal gatherings &mdash; a walk over lunch, a midweek prayer huddle, or hosting a picnic for your cohort.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What's expected of me after the program, as an alumnus/alumna?</summary>
+      <div class="faq-body">
+        <p>Our alumni commitment is to stay engaged in prayer, relationship, and financial support. We hope you'll keep praying for Vocare, connect us to your church and community, and stay in relationship with the cohort &mdash; attending Vocare Forum events, staying active in our Slack, and helping organize alumni meetups, even if life takes you elsewhere geographically or professionally.</p>
+        <p>Financially, rather than charge a high fee upfront, we ask alumni to make a donation of $1,000 (or a meaningful amount if that's out of reach) at the end of the program, plus a suggested annual donation of $1,000 going forward &mdash; fully tax-deductible, since it's a donation rather than a membership fee. If you have a windfall event (an exit, meaningful secondary sale, a big promotion, a new job), we'd be honored to receive a one-time gift in whatever way feels aligned with the program's impact on you.</p>
+        <p>Longer-term, Vocare needs to raise roughly $700,000 a year to run two cohorts, eight large-group events, and support the broader Faith, Work + Tech ecosystem. We believe small, faithful gifts from alumni over the next decade can sustain this program for generations.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Are there any other requirements or things you look for?</summary>
+      <div class="faq-body">
+        <p>Beyond the core requirements above: we view "career" broadly, including work, grad school, gap years, and ministry service, and we look for cohorts moving through similar life stages together. We view "tech" broadly too &mdash; software, biotech, robotics, or roles deeply embedded in the tech ecosystem (benefits brokers or lawyers working exclusively with VC-backed startups, for example) all count. We may make limited exceptions for people outside tech who we believe will meaningfully contribute to the conversation and are committed to building a redemptive ecosystem in the Bay Area.</p>
+        <p>We're building an ecosystem here in the Bay Area, so we prioritize applicants planning to stay and work in the region for the foreseeable future. Unfortunately, we can't support relocation to participate, and we can't sponsor employment or visas.</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<footer class="site wrap">
+  <p>Questions before you apply? <a href="mailto:kate@faithworktech.org">Reach out to our team</a>.</p>
+  <p style="margin-top:1rem; font-size:0.82rem; color:#8a8f98;">Vocare Collective is an initiative from the Bay Area Center for Faith, Work, and Tech. Visit <a href="https://faithworktech.org" target="_blank" rel="noopener" style="color:#8a8f98; border-bottom-color:#c7cbd1;">faithworktech.org</a> to learn more.</p>
+  <p style="margin-top:1rem;">&copy; 2026 Vocare Collective</p>
+</footer>
+
+</body>
+</html>
